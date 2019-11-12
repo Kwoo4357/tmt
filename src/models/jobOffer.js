@@ -22,7 +22,11 @@ jobOfferSchema.statics.findUsingStart = function (start) {
 };
 
 jobOfferSchema.statics.findByJobOfferId = function (jobOfferId) {
-  return this.find({_id: jobOfferId});
+  return this.findOne({_id: jobOfferId});
+};
+
+jobOfferSchema.statics.findByLocationUsingStart = function (location, start) {
+  return this.find({location:location}).skip(start).limit(5);
 };
 
 const JobOffer = mongoose.model('JobOffer', jobOfferSchema);
