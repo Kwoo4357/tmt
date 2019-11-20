@@ -14,6 +14,7 @@ const jobOfferSchema = new Schema({
 
 jobOfferSchema.statics.create = function(jobOfferItem) {
   const newMenu = new this(jobOfferItem);
+  newMenu._id = mongoose.Types.ObjectId();
   return newMenu.save().catch(e=>console.log(e));
 };
 
