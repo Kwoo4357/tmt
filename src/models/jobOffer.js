@@ -19,7 +19,8 @@ jobOfferSchema.statics.create = function(jobOfferItem) {
 };
 
 jobOfferSchema.statics.findUsingStart = function (start) {
-  return this.find().skip(start).limit(5);
+  const startNum = Number.parseInt(start);
+  return this.find().skip(startNum).limit(5);
 };
 
 jobOfferSchema.statics.findByJobOfferId = function (jobOfferId) {
@@ -27,7 +28,8 @@ jobOfferSchema.statics.findByJobOfferId = function (jobOfferId) {
 };
 
 jobOfferSchema.statics.findByLocationUsingStart = function (location, start) {
-  return this.find({location:location}).skip(start).limit(5);
+  const startNum = Number.parseInt(start);
+  return this.find({location:location}).skip(startNum).limit(5);
 };
 
 const JobOffer = mongoose.model('JobOffer', jobOfferSchema);
