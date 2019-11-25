@@ -6,7 +6,7 @@
 </head>
 <body>
 <div class="platform_icon">아이콘 들어갈 자리</div>
-<form onsubmit="{event=>{event.preventDefault(); console.log('test success');}}" method="POST" class="form-example">
+<form id="offer-register-form">
     <div class="form-example">
         <label for="summary">제목 : </label>
         <input type="text" name="name" id="summary" required>
@@ -44,5 +44,7 @@
         <input type="submit" value="Subscribe!">
     </div>
 </form>
+<script src="/js/jquery-3.4.1.js"></script>
+<script src="/js/registerOffer.js"></script>
 </body>
 </html>
