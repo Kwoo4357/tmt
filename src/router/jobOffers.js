@@ -4,7 +4,6 @@ import JobOffer from '../models/jobOffer';
 const router = express.Router();
 router.use(express.json());
 
-
 router.get('/:offerId', (req,res)=>{
   //response a job offer data by JSON
   JobOffer.findByJobOfferId(req.params.offerId)
