@@ -2,8 +2,7 @@ let start = 0;
 let isListEnd = false;
 let modal = document.getElementById("offer-information-modal");
 let span = document.getElementsByClassName("close")[0];
-
-
+let filterLocation = null;
 
 const parseJsonObjToOfferComponent = (jsonObject) => {
   let offerComponent = document.createElement('div');
@@ -58,8 +57,9 @@ const offerCardClickListener = (event) => {
 
 const loadAndRenderOffers = () => {
   if (isListEnd) return;
+  let locationQueryParameter = filterLocation === null ? "" : "&location=" + filterLocation
   $.ajax({
-    url: window.location.href + "?start=" + start,
+    url: window.location.href + "?start=" + start + locationQueryParameter,
     method: "GET",
     dataType: "json"
   }).done(jsonArray => {
@@ -77,6 +77,11 @@ const loadAndRenderOffers = () => {
     });
 };
 
+const wipeOfferList = () => {
+  let offerList = document.getElementsByClassName("offer-list")[0];
+  offerList.innerHTML = null;
+};
+
 const parseJsonObjToLocation = (jsonObject) => {
   let locationRadio = document.createElement('div');
   locationRadio.innerHTML = "<li>" + '<input type="radio" name="location" value="' + jsonObject.name + '"> ' + jsonObject.name + "</li>";
@@ -90,12 +95,19 @@ const loadAndRenderLocations = () => {
     method: "GET",
     dataType: "json"
   }).done(jsonArray => {
-      jsonArray.map(jsonObject => {
+    jsonArray.map(jsonObject => {
         let location = parseJsonObjToLocation(jsonObject);
         $(".location-list").append(location);
-      });
-    }
-  )
+      }
+    );
+    $('input').change(function () {
+      filterLocation = this.value === '없음' ? null : this.value;
+      start = 0;
+      isListEnd = false;
+      wipeOfferList();
+      loadAndRenderOffers();
+    });
+  })
     .fail(() => {
       alert("data load fail");
     });
@@ -116,21 +128,12 @@ $(function () {
   loadAndRenderLocations();
 });
 
-
-// Get the button that opens the modal
-let btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-
-// When the user clicks on the button, open the modal
-
-
-// When the user clicks on <span> (x), close the modal
 span.onclick = () => {
   modal.style.display = "none";
 };
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = (event) => {
   if (event.target === modal) modal.style.display = "none";
 };
+
+

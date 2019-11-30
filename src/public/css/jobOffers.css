@@ -47,7 +47,7 @@ body {
    cursor: pointer;
  }
 
-.offer-list{
+.content-wrapper{
   position: relative;
   overflow: hidden;
   max-width: 1100px;
