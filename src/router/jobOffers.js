@@ -1,14 +1,21 @@
 import express from 'express';
 import JobOffer from '../models/jobOffer';
+import Location from '../models/location'
 
 const router = express.Router();
 router.use(express.json());
 
-router.get('/:offerId', (req, res) => {
+router.get('/details/:offerId', (req, res) => {
   //response a job offer data by JSON
   JobOffer.findByJobOfferId(req.params.offerId)
     .then(offer => res.json(offer))
     .catch(e => res.status(500).send(e));
+});
+
+router.get('/locations', (req,res)=>{
+  Location.find()
+    .then(locations=>res.json(locations))
+    .catch(e=>res.status(500).send(e));
 });
 
 router.get('/', (req, res) => {

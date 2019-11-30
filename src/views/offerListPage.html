@@ -11,8 +11,24 @@
     <img class="small-logo" src="/image/logo.png" alt="logo" onclick="location.href = '/'">
 </div>
 <div class="body">
-    <div class="location-list"></div>
-    <div class="offer-list"></div>
+
+    <div class="offer-list">
+        <div class="location-list">
+            <div class="location-list-label">지역 필터</div>
+            <li>
+                <input type="radio" name="location" value="" checked> 없음
+            </li>
+        </div>
+    </div>
+</div>
+<div id="offer-information-modal" class="modal">
+
+    <div class="modal-body">
+        <span class="close">&times;</span>
+        <div id="offer-information">
+        </div>
+    </div>
+
 </div>
 <script src="/js/jquery-3.4.1.js"></script>
 <script src="/js/jobOffers.js"></script>
