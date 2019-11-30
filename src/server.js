@@ -1,7 +1,7 @@
 import express from 'express';
 import jobOffers from "./router/jobOffers";
 import registerOffer from "./router/registerOffer";
-import main from "./router/main";
+import main from "./router/root";
 import path from 'path';
 import ejs from 'ejs';
 

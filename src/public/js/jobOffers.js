@@ -4,14 +4,14 @@ let isListEnd = false;
 const parseJsonObjToOfferComponent = (jsonObject) => {
   let offerComponent = document.createElement('div');
   offerComponent.id = jsonObject._id;
-  offerComponent.class = "offer-card";
+  offerComponent.className = "offer-card";
   
   let offerComponentString = "";
   offerComponentString += "<div class='offer-summary'>" + jsonObject.summary + "</div>";
   offerComponentString += "<div class='offer-content'>" + jsonObject.content + "</div>";
-  offerComponentString += "<div class='offer-pay'>" + jsonObject.pay + ' 원' + "</div>";
-  offerComponentString += "<div class='offer-location'>" + jsonObject.location + "</div>";
-  offerComponentString += "<div class='offer-register-date'>" + jsonObject.registerDate.split("T")[0] + "</div>";
+  offerComponentString += "<div class='offer-pay'>"  + "급여 : <b>"+ jsonObject.pay + '</b> 원' + "</div>";
+  offerComponentString += "<div class='offer-location'>" +"근무 지역 : <b>" + jsonObject.location + "</b></div>";
+  offerComponentString += "<div class='offer-register-date'>" +"게시일 : "+ jsonObject.registerDate.split("T")[0] + "</div>";
   offerComponent.innerHTML = offerComponentString;
   
   return offerComponent;
@@ -28,7 +28,7 @@ const loadAndRenderList = () => {
       start += jsonArray.length;
       jsonArray.map(jsonObject => {
         let offerComponent = parseJsonObjToOfferComponent(jsonObject);
-        document.body.appendChild(offerComponent);
+        $(".offer-list").append(offerComponent);
       });
     }
   )

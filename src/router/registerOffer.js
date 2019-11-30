@@ -7,7 +7,7 @@ router.use(express.urlencoded( {extended : false } ));
 
 router.get('/', (req,res) => {
   //response register page
-  res.render('registerOffer.html');
+  res.render('registerOfferPage.html');
 });
 
 router.post('/', (req,res) => {
