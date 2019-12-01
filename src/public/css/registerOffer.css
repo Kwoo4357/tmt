@@ -4,5 +4,127 @@ body {
 }
 
 .form-component {
-  margin-top: 80px;
+  margin: 100px auto 0 auto;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 46px 75px 70px 75px;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.10);
+}
+
+.image-wrapper{
+  position: relative;
+  margin: 0 auto 20px auto;
+  width: 150px;
+}
+
+.form-component img{
+  width: 150px;
+}
+
+.form-component label{
+  font-size: 14px;
+  color: #787;
+  padding-left: 5px;
+}
+
+.form-text{
+  margin-top: 30px;
+  margin-right: 50px;
+}
+
+.form-radio{
+  margin: 40px 0 60px 0;
+}
+
+input{
+  outline: none;
+  border: none;
+}
+
+textarea{
+  outline: none;
+  border: none;
+  margin-top: 5px;
+  display: block;
+  width: 100%;
+  background: rgba(0, 100, 0, 0.02);
+  border-radius: 2px;
+  line-height: 1.2;
+  padding: 0 10px;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  height: 32px;
+  font: 400 13px Arial;
+}
+
+#content{
+  min-height: 72px;
+  padding-top: 19px;
+  padding-bottom: 13px;
+  overflow: auto;
+  resize: vertical;
+}
+
+.form-component input{
+  display: block;
+  width: 100%;
+  background: rgba(0, 100, 0, 0.02);
+  border-radius: 2px;
+  line-height: 1.2;
+  padding: 0 10px;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  margin-top: 5px;
+  height: 32px;
+  font: 400 13px Arial;
+}
+
+.form-title{
+  font-size: 21px;
+  color: #333;
+  padding: 0 0 14px 10px;
+}
+
+.form-radio-label{
+  margin: 40px 5px 10px 5px;
+  font-size: 16px;
+  color: #565;
+}
+
+li{
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: #787;
+}
+
+.form-radio input{
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  margin: 0 5px 0 10px;
+}
+
+.form-employer-information{
+  margin: 10px 30px 50px 0;
+  padding : 1px 10px 10px;
+  box-shadow: 0 1px 3px 0 rgba(0,20,0,.10);
+}
+
+.employer-information-label{
+  margin: 0 5px 0 2px;
+  font-size: 18px;
+  color: #666;
+}
+
+.form-employer-information div{
+  margin: 10px 10px;
+}
+
+.form-employer-information input{
+  width: 95%;
 }

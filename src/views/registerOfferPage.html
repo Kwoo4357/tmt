@@ -11,39 +11,49 @@
     <img class="small-logo" src="/image/logo.png" alt="logo" onclick="location.href = '/'">
 </div>
 <div class="form-component">
-    <img class="middle-size-logo" src="/image/logo.jpg" alt="logo">
+    <div class="image-wrapper">
+        <img class="middle-size-logo" src="/image/logo.jpg" alt="logo">
+    </div>
+    <div class="form-title">구인 공고 등록</div>
     <form id="offer-register-form">
         <div class="form-text">
-            <label for="summary">제목 : </label>
-            <input type="text" name="summary" id="summary" required>
+            <label for="summary">제목</label>
+            <input type="text" name="summary" id="summary" placeholder="업무를 간략히 요약" required>
         </div>
         <div class="form-text">
-            <label for="content">내용 : </label>
-            <input type="text" name="content" id="content" required>
+            <label for="content">내용</label>
+            <textarea name="content" id="content" placeholder="업무를 상세히 설명" required></textarea>
         </div>
         <div class="form-text">
-            <label for="pay">급여(원 단위) : </label>
-            <input type="text" name="pay" id="pay" required>
+            <label for="pay">급여 (원 단위)</label>
+            <input type="text" name="pay" id="pay" placeholder="원(KRW) 단위로 숫자만 입력" required>
         </div>
         <div class="form-radio">
-            <div>장소</div>
-            <input type="radio" name="location" value="서울">서울
-            <input type="radio" name="location" value="경기">경기
-            <input type="radio" name="location" value="인천">인천
+            <div class="form-radio-label">근무 장소</div>
+            <li>
+                <input type="radio" name="location" value="서울">서울
+            </li>
+            <li>
+                <input type="radio" name="location" value="경기">경기
+            </li>
+
+            <li>
+                <input type="radio" name="location" value="인천">인천
+            </li>
         </div>
         <div class="employer-information-label">작성자 정보</div>
         <div class="form-employer-information">
             <div class="form-text">
-                <label for="employerName">이름 : </label>
-                <input type="text" name="employerName" id="employerName" required>
+                <label for="employerName">이름</label>
+                <input type="text" name="employerName" id="employerName" placeholder="공고 작성자 본인 이름 입력" required>
             </div>
             <div class="form-text">
-                <label for="employerPhone">휴대폰 번호 : </label>
-                <input type="text" name="employerPhone" id="employerPhone" required>
+                <label for="employerPhone">휴대폰 번호</label>
+                <input type="text" name="employerPhone" id="employerPhone" placeholder="000-0000-0000 형식으로 입력" required>
             </div>
             <div class="form-text">
-                <label for="employerMail">메일 : </label>
-                <input type="text" name="employerMail" id="employerMail" required>
+                <label for="employerMail">메일</label>
+                <input type="text" name="employerMail" id="employerMail" placeholder="xxx@aaa.ccc 형식으로 입력" required>
             </div>
         </div>
         <input id="submit" type="submit" value="등록">
