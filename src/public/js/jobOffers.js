@@ -57,7 +57,7 @@ const offerCardClickListener = (event) => {
 
 const loadAndRenderOffers = () => {
   if (isListEnd) return;
-  let locationQueryParameter = filterLocation === null ? "" : "&location=" + filterLocation
+  let locationQueryParameter = filterLocation === null ? "" : "&location=" + filterLocation;
   $.ajax({
     url: window.location.href + "?start=" + start + locationQueryParameter,
     method: "GET",
@@ -124,8 +124,8 @@ $(function () {
       loadAndRenderOffers();
     }
   });
-  loadAndRenderOffers();
   loadAndRenderLocations();
+  loadAndRenderOffers();
 });
 
 span.onclick = () => {
